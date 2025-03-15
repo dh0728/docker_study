@@ -20,13 +20,13 @@ docker network create docker-network
 터미널 창에 **docker network create docker-network** 입력
 - **docker network ls** 명령어 입력 후 docker 네트워크 목록 확인
 
-![alt text](image6.png)
+![alt text](./images/image6.png)
 
 ## 🐬 2.1 mysql 이미지 컨테이너 생성
 - 터미널 창에 **docker pull mysql:8.0** 입력
 - docker images로 확인 가능
 
-![alt text](image7.png)
+![alt text](./images/image7.png)
 
 ## 🐬 2.2 mysql docker 컨테이너 생성
 다운로드한 mysql docker 이미지를 생성한 docker 네트워크에 귀속시키며 생성
@@ -42,10 +42,10 @@ docker run -d --name mysql-container --network docker-network -e MYSQL_ROOT_PASS
 - -e MYSQL_ROOT_PASSWORD=1234 : 환경 변수 설정, MySQL의 root 계정 비밀번호 1234로 설정
 - mysql:8.0 : 사용할 MySQL 이미지와 버전을 지정
 
-![alt text](image8.png)
+![alt text](./images/image8.png)
 
 ### 🐟 docker 생성중 발생하는 오류
-![alt text](image10.png)
+![alt text](./images/image10.png)
 - **호스트(로컬)의 3306포트가 이미 사용 중**이라 MySQL 컨테이너를 생성할 때 포트를 바인딩할 수 없을 때 발생하는 오류이다.
 - 참고로 해당 오류가 발생해도 container의 생성은 된다. run이 안될뿐..
 
@@ -71,7 +71,7 @@ docker start mysql-container
 docker network inspect docker-network
 ```
 
-![alt text](image9.png)
+![alt text](./images/image9.png)
 
 ## 🐬 2.3 mysql DB 생성
 spring boot project에서는 DB의 이름은 helloDev로 해서 사용할 예정
@@ -129,7 +129,7 @@ docker network inspect docker-network
 http://127.0.0.1:8088/api/testTable
 ```
 
-![alt text](image11.png)
+![alt text](./images/image11.png)
 
 
 🚀 왜 네트워크 연결이 필요한가?
