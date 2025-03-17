@@ -112,7 +112,7 @@ docker exec -it <mysql-container이름> mysql -u root -p 명령어를 통해 DB 
 ./gradlew build
 
 docker build -t spring . 
-```
+```ce
 
 #### Spring boot 컨테이너 생성
 ```
